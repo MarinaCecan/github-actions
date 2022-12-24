@@ -1,0 +1,15 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Javascrip Action
+        id: greed
+        uses: actions/hello-world-javascript-action@v1
+        with: 
+          who-to-greed: Marina
+      - name: Log Greeding Tiime
+        run: echo "${{ steps.greed.outputs.time }}"
