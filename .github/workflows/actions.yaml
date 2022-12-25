@@ -1,9 +1,23 @@
 name: Actions Workflow
 
 on: 
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+  push:
+    branches-ignore:
+      - master
+      - develop
+      - 'feature/*' #matches everything that starts with feature
+      - 'feature/**'
+      - '!feature/featC'
+    tags:
+      - v1.*
+    paths:
+      - '**.terraform'
+      - '!filename.js'
+  #   paths-ignore:
+  #     - 'docs/**'
+  # # schedule:
+  #   - cron: "0/5 * * * *"
+  #   - cron: "0/6 * * * *"
   #push:
   pull_request:
     types: [closed, assigned, opened, reopened]
