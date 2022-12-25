@@ -24,6 +24,6 @@ jobs:
         id: greed
         uses: actions/hello-world-javascript-action@v1
         with: 
-          who-to-greed: Marina
+          who-to-greed: Marinac
       - name: Log Greeding Tiime
         run: echo "${{ steps.greed.outputs.time }}"
